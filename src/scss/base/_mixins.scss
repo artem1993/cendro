@@ -1,0 +1,75 @@
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+	$addSize: $startSize - $minSize;
+
+	@if $type == 1 {
+		// Только если меньше контейнера
+		#{$property}: rem($startSize);
+		@media (max-width: #{rem($maxWidthContainer)}) {
+			#{$property}: calc(
+				#{rem($minSize)} + #{$addSize} *
+					((100vw - #{rem($minWidth)}) / #{$maxWidthContainer - $minWidth})
+			);
+		}
+	} @else {
+		// Всегда
+		#{$property}: calc(
+			#{rem($minSize)} +
+				#{$addSize} *
+				((100vw - #{rem($minWidth)}) / #{$maxWidth - $minWidth})
+		);
+	}
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+@mixin pc(){
+	@media (max-width: $pc){
+		@content;
+	}
+}
+
+@mixin tablet() {
+	@media (max-width: $tablet) {
+		@content;
+	}
+}
+
+@mixin mobile() {
+	@media (max-width: $mobile) {
+		@content;
+	}
+}
+
+@mixin mobileSmall() {
+	@media (max-width: $mobileSmall) {
+		@content;
+	}
+}
+
+@mixin mf-tablet() {
+	@media (min-width: $tablet) {
+		@content;
+	}
+}
+
+@mixin mf-mobile() {
+	@media (min-width: $mobile) {
+		@content;
+	}
+}
+
+@mixin mf-mobileSmall() {
+	@media (min-width: $mobileSmall) {
+		@content;
+	}
+}
+
+@mixin retinaBg() {
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		@content;
+	}
+}

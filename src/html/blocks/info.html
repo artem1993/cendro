@@ -1,0 +1,46 @@
+<div class="info">
+    <h1 class="info__title">профиль</h1>
+    <div class="info__form form">
+        <h4>Данные профиля</h4>
+        <form action="/" method="post" id="form">
+            <div class="form__item">
+                <label>
+                    <span>ФИО</span>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Алексеева Ульяна Евгеньевна"
+                        required
+                    >
+                </label>
+            </div>
+            <div class="form__item">
+                <label>
+                    <span>Почта</span>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="pochta07@mail.ru"
+                        required
+                    >
+                </label>
+            </div>
+            <div class="form__item">
+                <label>
+                    <span>Телефон</span>
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="+7 (999) 999-99-99"
+                        required
+                    >
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="info__btn btn">
+        <div class="btn__body">
+            <button type="submit" form="form">Сохранить изменения</button>
+        </div>
+    </div>
+</div>

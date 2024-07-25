@@ -1,0 +1,26 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	background-color: #ffffff;
+	&__body {
+		min-height: var(--header-height);
+		border-bottom: var(--border);
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 34px;
+		position: relative;
+		align-items: center;
+		padding-top: 23px;
+		padding-bottom: 23px;
+		@include adaptive-value("padding-right", 37, 21, 1);
+		@include adaptive-value("padding-left", 37, 21, 1);
+	}
+	&__actions {
+		display: flex;
+		@include adaptive-value("column-gap", 48, 34, 1);
+	}
+}

@@ -1,0 +1,65 @@
+@use "sass:math";
+
+html, body {
+	scroll-behavior: smooth;
+	scrollbar-gutter: stable;
+}
+
+body {
+	color: var(--main-color);
+	font-family: var(--font-main);
+}
+
+main {
+	padding-top: var(--header-height);
+}
+
+h1 {
+	@include adaptive-value("font-size", 80, 35, 1);
+	@include adaptive-value("line-height", 80, 40, 1);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	font-weight: 400;
+}
+
+h2 {
+	font-weight: 500;
+	@include adaptive-value("font-size", 48, 28, 1);
+	@include adaptive-value("line-height", 56, 32, 1);
+	text-transform: uppercase;
+}
+
+h4 {
+	font-weight: 500;
+	@include adaptive-value("font-size", 24, 20, 1);
+	@include adaptive-value("line-height", 24, 20, 1);
+}
+
+h6 {
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 18px;
+	font-style: italic;
+	font-family: "Times New Roman", serif;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--accent-color);
+		}
+	}
+}
+
+.container {
+	margin: 0 auto;
+	max-width: rem($maxWidthContainer);
+}
+
+.general {
+	@include mf-mobile() {
+		border-bottom: var(--border);
+	}
+	@include mf-mobile() {
+		display: grid;
+		grid-template-columns: 21.25% 1fr;
+	}
+}

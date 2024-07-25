@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('blocks/head.html', { "title":"Cedro" })
+    <body>
+        @@include('blocks/header.html')
+        <main>
+            <div class="container">
+                <section class="general">
+                    @@include('blocks/sidebar.html')
+                    @@include('blocks/info.html')
+                </section>
+                <section class="products">
+                    <div class="products__body">
+                        <h2 class="products__title">
+                            <span>тренды</span>
+                            сезона
+                        </h2>
+                        @@include('blocks/slider.html')
+                        <a href="#" class="products__catalog-btn catalog-btn">
+                            Перейти в каталог
+                            <span class="icon-arrow-right"></span>
+                        </a>
+                    </section>
+                </div>
+            </main>
+        </body>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="js/index.bundle.js"></script>
+    </body>
+</html>

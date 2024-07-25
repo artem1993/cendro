@@ -1,0 +1,84 @@
+/* UI */
+
+.btn {
+	&__body {
+		max-width: 544px;
+	}
+	button {
+		color: #ffffff;
+		background-color: var(--main-color);
+		text-align: center;
+		border-radius: calc(var(--radius) / 2);
+		transition: all 0.3s ease 0s;
+		font-size: 16px;
+		line-height: 24px;
+		padding: 0 rem($otherPadding);
+		font-weight: 500;
+		@include adaptive-value(
+			"padding-top",
+			$mobilePadding,
+			$mobilePadding - 4,
+			1
+		);
+		@include adaptive-value(
+			"padding-bottom",
+			$mobilePadding,
+			$mobilePadding - 4,
+			1
+		);
+		@include mobile() {
+			width: 100%;
+		}
+		&:active {
+			background-color: var(--accent-color);
+			opacity: 0.5;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--accent-color);
+			}
+		}
+	}
+}
+
+.no-scroll {
+	overflow-y: hidden;
+}
+
+.flyImage {
+	opacity: 1;
+	position: fixed;
+	z-index: 100;
+	transition: all 0.8s ease 0s;
+}
+
+.catalog-btn {
+	display: inline-flex;
+	align-items: center;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+	gap: 8px;
+	position: relative;
+	transition: all 0.3s ease 0s;
+	span {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease 0s;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		border: 2px solid var(--main-color);
+		font-size: 6px;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--accent-color);
+			span {
+				border-color: var(--accent-color);
+				color: var(--accent-color);
+			}
+		}
+	}
+}

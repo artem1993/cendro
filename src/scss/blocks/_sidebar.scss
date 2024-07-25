@@ -1,0 +1,43 @@
+.sidebar {
+	&__body {
+		@include adaptive-value("padding-top", $mainPadding, 8, 1);
+		@include adaptive-value("padding-bottom", $mainPadding, 8, 1);
+		@include adaptive-value("padding-left", $generalPadding, $mobilePadding, 1);
+		padding-right: rem($mobilePadding);
+	}
+	&__list {
+		a {
+			font-size: 14px;
+			line-height: 24px;
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: 0.04em;
+			transition: all 0.3s ease 0s;
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--accent-color);
+				}
+			}
+		}
+	}
+	@include mf-mobile() {
+		border-right: var(--border);
+	}
+	@include mobile() {
+		border-bottom: var(--border);
+		&__body {
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+		&__list {
+			display: flex;
+			justify-content: space-between;
+			column-gap: 16px;
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				column-gap: 16px;
+			}
+		}
+	}
+}
