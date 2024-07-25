@@ -84,6 +84,8 @@
 		font-size: 17px;
 		color: #e4e4e4;
 		transition: all 0.3s ease 0s;
+		position: relative;
+		z-index: 100;
 		@media (any-hover: hover) {
 			&:hover {
 				color: var(--main-color);
