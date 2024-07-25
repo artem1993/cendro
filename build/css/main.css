@@ -754,6 +754,8 @@ h6 {
 .product__favorite-btn {
   font-size: 17px;
   color: #e4e4e4;
+  position: relative;
+  z-index: 100;
   transition: all 0.3s ease 0s;
 }
 @media (any-hover: hover) {
